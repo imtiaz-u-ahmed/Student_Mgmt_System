@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+
+<head> </head>
+
+<body>
+
+<table class = "table table-dark">
+
+  <tr>
+
+    <th> Name </th>
+    <th> Roll </th>
+    <th> Student Class </th>
+    <th> Gender </th>
+    <th> Age </th>
+    <th> Guardian </th>
+
+  </tr>
+
+  {% for student in students_list %}
+  <tr>
+    <td> <a href="{% url 'students-info-dtls' student.roll %}">{{ student.name }} </a></td>
+    <td> {{ student.roll }} </td>
+    <td> {{ student.std_class }} </td>
+    <td> {{ student.gender }} </td>
+    <td> {{ student.age }} </td>
+    <td> <a href = "{% url 'guardians-info-dtls' student.guardian.phone %}">{{ student.guardian.name }} </td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+
+</html>
+
+{% endblock %}

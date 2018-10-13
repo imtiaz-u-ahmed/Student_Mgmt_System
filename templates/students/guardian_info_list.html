@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+
+<head> </head>
+
+<body>
+
+<table class = "table table-dark">
+
+  <tr>
+    <th> Name </th>
+    <th> Relation </th>
+    <th> Gender </th>
+    <th> Age </th>
+    <th> Phone </th>
+  </tr>
+
+  {% for g in Guardian_list %}
+  <tr>
+
+    <td> {{ g.name }} </td>
+    <td> {{ g.relation }} </td>
+    <td> {{ g.gender }} </td>
+    <td> {{ g.age }} </td>
+    <td> {{ g.phone }} </td>
+
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+
+</html>
+
+{% endblock %}
